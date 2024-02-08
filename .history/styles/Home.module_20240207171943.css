@@ -1,0 +1,38 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+}
+
+.aside-containera {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  row-gap: 20px;
+}
+
+.main-content-containera {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.top-menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: right;
+  column-gap: 20px;
+  width: 100%;
+
+}
+.aside-btn{
+
+  text-align: left;
+  border: none;
+  background: none;
+}

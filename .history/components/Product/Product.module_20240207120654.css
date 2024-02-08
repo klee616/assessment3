@@ -1,0 +1,42 @@
+
+.book-containera {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    background: var(--product-background);
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    width: calc(33% - 50px);
+  }
+  
+  .book-selection{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    background: var(--product-background);
+    text-align: center;
+    border: rgba(0,0,0,0) solid 10px;
+    width: 200px;
+    cursor: pointer;
+  }
+  
+  .book-selection:hover{
+    border: var(--highlight) solid 10px;
+  }
+  
+  
+  .course-name{
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+  }
+  .book-name{
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+  }
