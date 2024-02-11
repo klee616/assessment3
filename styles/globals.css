@@ -6,6 +6,13 @@
   --product-background: rgb(245, 245, 245);
 }
 
+*{
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  font-size: 1rem;
+}
+
 a{
   color: inherit;
   text-decoration: none;

@@ -1,38 +1,63 @@
-.page-header{
+.page-header {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
-  }
-  
-.menu-container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content:space-between;
-    align-items: center;
 }
-
-.menu-list{
+.menu-list {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-content: center;
-    justify-content:space-around;
+    justify-content: space-around;
     align-items: center;
     list-style: none;
+    gap: 20px;
 }
 
-.menu-list .menu-item{
-    width: 150px;
+.menu-list .menu-item {
+    width: auto;
     text-align: left;
 }
-.menu-list .menu-item:nth-last-child(1){
+
+.menu-list .menu-item:nth-last-child(1) {
     text-align: right;
 }
-.menu-item a{
-display: block;
-width: 100%;
+
+.menu-item a {
+    display: block;
+    width: 100%;
+}
+
+.logo {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    float: left;
+}
+
+.kart{
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    float: right;
+}
+
+.menu-container{
+
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+@media (max-width:1220px) and (min-width:701px) {
+
+}
+
+@media (max-width:700px) {
+
 }

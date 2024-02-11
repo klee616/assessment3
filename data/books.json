@@ -10,8 +10,7 @@
             "Carol Bureau"
         ],
         "edition": 6,
-        "image": "marketing-the-core.jpg",
-        "category": "Marketing"
+        "image": "marketing-the-core.jpg"
     },
     {
         "course": "COMM 1120",
@@ -21,8 +20,7 @@
             "John Thill"
         ],
         "edition": 5,
-        "image": "business-communication-essentials.jpg",
-        "category": "Communication"
+        "image": "business-communication-essentials.jpg"
     },
     {
         "course": "COMM 2003",
@@ -33,8 +31,7 @@
             "Greg Holditch"
         ],
         "edition": 10,
-        "image": "the-bare-essentials.jpg",
-        "category": "Communication"
+        "image": "the-bare-essentials.jpg"
     },
     {
         "course": "COMP 2121",
@@ -43,8 +40,7 @@
             "Susanna Epp"
         ],
         "edition": 5,
-        "image": "discrete-mathematics-with-applications.jpg",
-        "category": "Math"
+        "image": "discrete-mathematics-with-applications.jpg"
     },
     {
         "course": "COMP 2511",
@@ -54,8 +50,7 @@
             "Harvey Deitel"
         ],
         "edition": 9,
-        "image": "c-how-to-program.png",
-        "category": "Computer Science"
+        "image": "c-how-to-program.png"
     },
     {
         "course": "MKTG 3304",
@@ -67,8 +62,16 @@
             "John Graham"
         ],
         "edition": 19,
-        "image": "international-marketing.jpg",
-        "category": "Marketing"
+        "image": "international-marketing.jpg"
+    },
+    {
+        "course": "MATH 3433",
+        "title": "Differential Equations for Electrical Technology",
+        "authors": [
+            "Eric Hiob"
+        ],
+        "edition": 3,
+        "image": "differential-equations-for-electrical-technology.png"
     },
     {
         "course": "COMP 3603",
@@ -78,8 +81,7 @@
             "Harvey Deitel"
         ],
         "edition": 10,
-        "image": "How-to-program.png",
-        "category": "Computer Science"
+        "image": "How-to-program.png"
     },
     {
         "course": "COMP 4985",
@@ -88,18 +90,16 @@
             "Johnson Hart"
         ],
         "edition": 4,
-        "image": "windows-system-programming.jpg",
-        "category": "Computer Science"
+        "image": "windows-system-programming.jpg"
     },
     {
-        "course": "COMM 7005",
+        "course": "COMP 7005",
         "title": "Computer Networking",
         "authors": [
             "James Kurose",
             "Keith Ross"
         ],
         "edition": 8,
-        "image": "computer-networking.jpg",
-        "category": "Computer Science"
+        "image": "computer-networking.jpg"
     }
 ]

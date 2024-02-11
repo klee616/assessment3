@@ -1,0 +1,8 @@
+.sorting-button{
+    border: 4px solid var(--blue);
+    padding: 0.3rem 2rem;
+}
+.sorting-button:hover{
+    background-color: var(--blue);
+    color: var(--white-text);
+}

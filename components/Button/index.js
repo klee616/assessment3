@@ -1,11 +1,20 @@
 import styles from './Button.module.css'
+import react, { forwardRef, useImperativeHandle }  from 'react';
 
-export default function Button(
-   { name='Button'}
-){
+
+export default function Botton({
+    changeSortingString, name,value
+
+}){
+
+    function handleClick(event) {
+        changeSortingString(event.target.name); // pass any argument to the callback
+      }
+    
     return (
         <>
-        <button>{name}</button>
+            <button className={styles['sorting-button']} name={value} onClick={handleClick}>{name}</button>
         </>
-    )
+    );
+
 }

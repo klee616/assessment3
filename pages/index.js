@@ -9,7 +9,6 @@ import { useState } from "react";
 import books from "@/data/books.json"
 import Product from "@/components/Product";
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -17,70 +16,76 @@ export default function Home() {
 
   const [cate, setCate] = useState("");
 
-  const [sorting, setSorting] = useState("title");
+  const [sortingString, setSortingString] = useState("");
 
-  let categorys = data.map(product => product.category);
-
-  categorys = categorys.filter((value, index) => categorys.indexOf(value) === index);
-  categorys.sort();
-
-  console.log();
+  const changeSortingString = (sorting) => {
+    setSortingString(sorting);
+  };
 
 
-return (
-  <>
-    <Head>
-      <title>BCIT Book Store</title>
-      <meta name="description" content="All online pick-up orders are available at the Burnaby Campus Bookstore (SE2). Please allow 2-3 business days for order processing." />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
 
-    <Header />
-    <main className={`${styles.main} ${inter.className}`}>
-      <div className={`${layout['row']}`}>
-        <div className={`${layout['col-lg-4']} ${layout['col-md-4']} ${layout['col-lg-4']}}`}>
-          <div className={styles['aside-containera']}>
-            <button  className={styles['aside-btn']} onClick={()=>setCate("all")} >All</button>
-            {
-              categorys && categorys.map((cate, index) => {
-                return (
-                  <>
-                    <button key={index} className={styles['aside-btn']} onClick={()=>setCate(cate)}>{cate}</button>
-                  </>
-                )
-              })
-            }
-          </div>
-        </div>
-        <div className={`${layout['col-lg-8']} ${layout['col-md-8']} ${layout['col-lg-8']}}`}>
-          <div className={styles['main-content-containera']}>
-            <div className={styles['top-menu']}>
-              <Button name="Book Title" />
-              <Button name="Up" />
-              <Button name="Down" />
+  return (
+    <>
+      <Head>
+        <title>BCIT Book Store</title>
+        <meta name="description" content="All online pick-up orders are available at the Burnaby Campus Bookstore (SE2). Please allow 2-3 business days for order processing." />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <Header />
+      <main className={`${styles.main} ${inter.className}`}>
+        <div className={`${layout['row']}`}>
+          <div className={`${layout['col-lg-3']} ${layout['col-md-3']} ${layout['col-sm-12']}}`}>
+            <div className={styles['aside-containera']}>
+              <button className={styles['aside-btn']} onClick={() => { setCate("ALL"); setSortingString("") }} >ALL</button>
+              <button className={styles['aside-btn']} onClick={() => { setCate("COMM"); setSortingString("") }} >Communication</button>
+              <button className={styles['aside-btn']} onClick={() => { setCate("COMP"); setSortingString("") }} >Computer Science</button>
+              <button className={styles['aside-btn']} onClick={() => { setCate("MKTG"); setSortingString("") }} >Marketing</button>
+              <button className={styles['aside-btn']} onClick={() => { setCate("MATH"); setSortingString("") }} >MATH</button>
+
             </div>
-            {
-              data && data
-              .filter((product) => (product.category == cate || cate == "all"))
-              .map((product, index) => {
-                  return (
-                    <>
-                      <Product
-                        index={index}
-                        code={product.course}
-                        img={product.image}
-                        bookName={product.title}
-                      />
-                    </>
-                  )
-              })
-            }
+          </div>
+          <div className={`${layout['col-lg-9']} ${layout['col-md-9']} ${layout['col-sm-12']}`}>
+            <div  className={styles['main-content-containera']}>
+
+              {
+                (cate != "") ? (<>
+                  <div className={styles['top-menu']}>
+                    <Button key={0} name="Book Title" changeSortingString={changeSortingString} value="TITLE" />
+                    <Button key={1} name="&#8593;" changeSortingString={changeSortingString} value="UP" />
+                    <Button key={2} name="&#8595;" changeSortingString={changeSortingString} value="DOWN" />
+                  </div>
+                </>) : (<></>)
+              }
+
+
+              {
+                data && data
+                  .filter((product) => (product.course.substring(0, 4) == cate || cate == "ALL"))
+                  .sort((a, b) => { return (sortingString == "TITLE") ? (a.title < b.title) ? -1 : 1 : (sortingString == "UP") ? a.edition - b.edition : (sortingString == "DOWN") ? b.edition - a.edition : 0 })
+                  .map((product, index) => {
+                    return (
+                      <>
+                        <Product
+                          key={index}
+                          code={product.course}
+                          img={product.image}
+                          bookName={product.title}
+                          edition={product.edition}
+                          authors={product.authors}
+                        />
+                      </>
+                    )
+                  })
+              }
+            </div>
           </div>
         </div>
-      </div>
-    </main>
-    <Footer />
-  </>
-);
+      </main>
+      <Footer />
+    </>
+  );
 }
